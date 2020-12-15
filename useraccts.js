@@ -9,9 +9,6 @@ let App = {
   stagedDataForDatabase: {},
 
   signup: function(data) {
-    this.stagedDataForDatabase = {
-      'practitioner-type': data['practitioner-type']
-    }
     firebase.auth().createUserWithEmailAndPassword(data.email, data.password)
       .catch(this.displayError.bind(this));
   },
